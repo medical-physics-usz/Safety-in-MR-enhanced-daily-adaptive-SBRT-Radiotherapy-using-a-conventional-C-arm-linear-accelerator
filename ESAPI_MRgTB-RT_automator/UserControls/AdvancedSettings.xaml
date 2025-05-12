@@ -1,0 +1,180 @@
+﻿<UserControl x:Class="USZ_RtPlanAutomator.AdvancedSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:USZ_RtPlanAutomator"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="30"/>                
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="Course"></Label>
+                <ComboBox Grid.Column="1" Grid.Row="0" Name="cmbCourse" SelectionChanged="CmbCourse_SelectionChanged"></ComboBox>
+                <Label Grid.Column="2" Grid.Row="0" Content="Plan"></Label>
+                <ComboBox Grid.Column="3" Grid.Row="0" Name="cmbPlan" SelectionChanged="CmbPlan_SelectionChanged"></ComboBox>
+                <Label Grid.Column="0" Grid.Row="1" Content="Structure"></Label>
+                <ComboBox Grid.Column="1" Grid.Row="1" Name="cmbStructure" SelectionChanged="CmbStructure_SelectionChanged"></ComboBox>
+
+                <Label Grid.Column="5" Grid.Row="0" Content="Couch"></Label>
+                <ComboBox Grid.Column="6" Grid.Row="0" Name="cmbCouch"></ComboBox>
+
+                <StackPanel Name="ptvItvStack" Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="3">
+                    <!-- PTV and ITV selection user control will be added here in the code -->
+                </StackPanel>
+
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Name="btnPtvRing" Content="Create PTV Ring" Click="BtnPtvRing_Click"/>
+                <Button Grid.Column="0" Grid.Row="1" Name="btnSBRTRing" Content="Create SBRT Rings" Click="BtnSbrtRing_Click" Height="20" VerticalAlignment="Top"/>
+                <Button Grid.Column="0" Grid.Row="2" Name="btnSibPh" Content="Create SIB structures" Click="BtnSibPh_Click"/>
+                <Button Grid.Column="0" Grid.Row="3" Name="btnHDStruct" Content="Create high density Structure" Click="BtnHDStruct_Click"/>
+                <Button Grid.Column="0" Grid.Row="4" Name="btnCouchStruct" Content="Create Couch Structures" Click="BtnCouchStruct_Click"/>
+                
+                <Button Grid.Column="2" Grid.Row="0" Name="btnAirStruct" Content="Create Air Structures" Click="BtnAirStruct_Click"/>
+                <Button Grid.Column="2" Grid.Row="1" Name="btnPtvPh" Content="Cut PTV buildup layer" Click="BtnPtvPh_Click"/>
+                <Button Grid.Column="2" Grid.Row="2" Name="btnBolus" Content="Create bolus structure" Click="BtnBolus_Click"/>
+                <Button Grid.Column="2" Grid.Row="3" Name="btnOrganInPtv" Content="Separate organ partly in PTV" Click="BtnOrganInPtv_Click"/>
+                
+                <StackPanel Name="ringWidthStack" Grid.Column="0" Grid.Row="6" MaxHeight="30">
+                    <!-- PTV ring width selection user control will be added here in the code -->
+                </StackPanel>
+                <StackPanel Name="ringGapStack" Grid.Column="0" Grid.Row="7" MaxHeight="30">
+                    <!-- PTV ring width selection user control will be added here in the code -->
+                </StackPanel>
+                <StackPanel Name="sibGapWidthStack" Grid.Column="0" Grid.Row="8" MaxHeight="30">
+                    <!-- SIB structure gap width selection user control will be added here in the code -->
+                </StackPanel>
+                
+                <StackPanel Name="ptvBuildupWidthStack" Grid.Column="2" Grid.Row="6" MaxHeight="30">
+                    <!-- PTV buildup layer width selection user control will be added here in the code -->
+                </StackPanel>
+                <StackPanel Name="ptvOrganMarginStack" Grid.Column="2" Grid.Row="7" MaxHeight="30">
+                    <!-- PTV buildup layer width selection user control will be added here in the code -->
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Clinical goals"></Label>
+            <Label Grid.Column="1" Grid.Row="0" Content="Structure ID"></Label>
+            <ListBox Grid.Column="1" Grid.Row="1" Name="lsbStructure"></ListBox>
+            <Label Grid.Column="2" Grid.Row="0" Content="Measure type"></Label>
+            <ListBox Grid.Column="2" Grid.Row="1" Name="lsbType"></ListBox>
+            <Label Grid.Column="3" Grid.Row="0" Content="Objective"></Label>
+            <ListBox Grid.Column="3" Grid.Row="1" Name="lsbObjective"></ListBox>
+            <Label Grid.Column="4" Grid.Row="0" Content="Actual Value"></Label>
+            <ListBox Grid.Column="4" Grid.Row="1" Name="lsbValue"></ListBox>
+            <Label Grid.Column="5" Grid.Row="0" Content="Priority"></Label>
+            <ListBox Grid.Column="5" Grid.Row="1" Name="lsbPriority"></ListBox>
+            <Label Grid.Column="6" Grid.Row="0" Content="Variation tolerance"></Label>
+            <ListBox Grid.Column="6" Grid.Row="1" Name="lsbTolerance"></ListBox>
+            <CheckBox Grid.Column="8" Grid.Row="0" Name ="checkBoxOverride" Content="Override existing structures"></CheckBox>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Objectives"></Label>
+            <Label Grid.Column="1" Grid.Row="0" Content="Structure ID"></Label>
+            <ListBox Grid.Column="1" Grid.Row="1" Name="lsbObjsStruct"></ListBox>
+            <Label Grid.Column="2" Grid.Row="0" Content="Volume"></Label>
+            <ListBox Grid.Column="2" Grid.Row="1" Name="lsbObjsVol"></ListBox>
+            <Label Grid.Column="3" Grid.Row="0" Content="Operator"></Label>
+            <ListBox Grid.Column="3" Grid.Row="1" Name="lsbObjsOper"></ListBox>
+            <Label Grid.Column="4" Grid.Row="0" Content="Dose"></Label>
+            <ListBox Grid.Column="4" Grid.Row="1" Name="lsbObjsDose"></ListBox>
+            <Label Grid.Column="5" Grid.Row="0" Content="Priority"></Label>
+            <ListBox Grid.Column="5" Grid.Row="1" Name="lsbObjsPrior"></ListBox>
+            <Button Grid.Column="9" Name="btnOptmz" MaxHeight="25" Content="Optimize" Click="BtnOptmz_Click"/>
+            <StackPanel Grid.Column="11" Grid.Row="0" Grid.RowSpan="2">
+                <Label>Verification plan image:</Label>
+                <RadioButton Name="radioBtnEmpty" IsChecked="True">Empty</RadioButton>
+                <RadioButton Name="radioBtnPhantom">Phantom</RadioButton>
+            </StackPanel>
+            <Button Grid.Column="13" Name="btnVerifPlan" MaxHeight="25" Content="Create Verification Plan" Click="BtnVerifPlan_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>
